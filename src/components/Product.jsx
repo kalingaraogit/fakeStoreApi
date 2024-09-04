@@ -63,7 +63,7 @@ const Product = () => {
           <h4 className="text-uppercase text-black-50">{product.category}</h4>
           <h1 className="display-5">{product.title}</h1>
           <p className="lead fw-bolder">
-            Rating {product.rating && product.rating.rate}
+            Rating  {product.rating && product.rating.rate}
             <i className="fa fa-star"></i>
           </p>
           <h3 className="display-6 fw-bold my-4">$ {product.price}</h3>
@@ -86,6 +86,7 @@ const Product = () => {
     <div>
       <div className="container py-5 ">
         <div className="row py-4 ">
+
           {loading ? <Loading/> : <ShowProduct/>}
           {/* <ShowProduct/> */}
         </div>
