@@ -3,10 +3,10 @@ import React from 'react'
 const About = () => {
   return (
     <div>
-      <span>hai</span>
+      <span>hai.</span>
     </div>
   )
 }
-
+ 
 
 export default About
