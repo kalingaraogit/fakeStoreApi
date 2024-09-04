@@ -1,9 +1,7 @@
 import React from "react";
-
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { addCart, delCart, clearCart } from "../redux/action";
-
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
@@ -12,9 +10,11 @@ const Cart = () => {
   const handleAdd = (item) => {
     dispatch(addCart(item));
   };
+  
   const handleDel = (item) => {
     dispatch(delCart(item));
   };
+  
   const handleClear = () => {
     dispatch(clearCart());
   };
@@ -33,8 +33,8 @@ const Cart = () => {
 
   const cartItems = (product) => {
     return (
-      <>
-        <div className="px-4 my-5 bg-light rounded-3 py-5">
+      
+        <div  key={product.id} className="px-4 my-5 bg-light rounded-3 py-5">
           <div className="container py-4">
             <div className="row justify-content-center">
               <div className="col-md-4">
@@ -67,9 +67,10 @@ const Cart = () => {
             </div>
           </div>
         </div>
-      </>
+      
     );
   };
+  
   const buttons = () => {
     return (
       <>
@@ -87,6 +88,12 @@ const Cart = () => {
             >
               Clear Cart
             </button>
+            <button
+              className="btn btn-outline-dark mb-5 w-25 mx-auto"
+              onClick={handlePayment}
+            >
+              Pay Now
+            </button>
           </div>
         </div>
       </>
@@ -98,6 +105,11 @@ const Cart = () => {
     0
   );
   
+  const handlePayment = () => {
+    // Implement your payment logic here
+    alert("Redirecting to payment gateway...");
+  };
+
   return (
     <div>
       {state.length === 0 && emptyCart()}
@@ -113,4 +125,5 @@ const Cart = () => {
     </div>
   );
 };
+
 export default Cart;

@@ -6,6 +6,7 @@ import {Routes, Route } from 'react-router-dom';
 import Product from './components/Product';
 import Cart from './components/Cart';
 import  Form  from './components/Form';
+import About from './components/About';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <Route  path='/' element={<Home/>}/>
     <Route  path='/Products' element={<Products/>}/>
     <Route  path='/products/:id' element={<Product/>}/>
+    <Route  path='/About' element={<About/>}/>
     <Route  path='/cart' element = {<Cart/>} />
     <Route  path='/form' element = {<Form/>}/>
     </Routes>

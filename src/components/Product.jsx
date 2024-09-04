@@ -18,6 +18,7 @@ const Product = () => {
 
 
 
+
   useEffect(()=>{
     const getProduct = async ()=>{
       setLoading(true)
@@ -26,7 +27,7 @@ const Product = () => {
       setLoading(false);
     }
     getProduct();
-  },[])
+  },[id])
 
   const Loading = () => {
     return (
@@ -94,3 +95,4 @@ const Product = () => {
 }
 
 export default Product
+
